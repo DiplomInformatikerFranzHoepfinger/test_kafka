@@ -2175,6 +2175,7 @@ static void rd_kafka_defaultconf_set (int scope, void *conf) {
 
 rd_kafka_conf_t *rd_kafka_conf_new (void) {
 	rd_kafka_conf_t *conf = rd_calloc(1, sizeof(*conf));
+	return conf;
         rd_assert(RD_KAFKA_CONF_PROPS_IDX_MAX > sizeof(*conf) &&
                   *"Increase RD_KAFKA_CONF_PROPS_IDX_MAX");
 	rd_kafka_defaultconf_set(_RK_GLOBAL, conf);
