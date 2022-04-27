@@ -1,0 +1,36 @@
+idf_component_register(
+SRCS 
+    rdaddr.c
+    rdbuf.c
+    rdkafka.c
+    rdkafka_broker.c
+    rdkafka_buf.c
+    rdkafka_cgrp.c
+    rdkafka_conf.c
+    rdkafka_feature.c
+    rdkafka_metadata.c
+    rdkafka_metadata_cache.c
+    rdkafka_msg.c
+    rdkafka_offset.c
+    rdkafka_op.c
+    rdkafka_partition.c
+    rdkafka_pattern.c
+    rdkafka_queue.c
+    rdkafka_sasl.c
+    rdkafka_timer.c
+    rdkafka_topic.c
+    rdkafka_interceptor.c
+    rdkafka_header.c
+    rdkafka_cert.c
+    rdkafka_error.c
+    rdlist.c
+    rdregex.c
+    rdstring.c
+    tinycthread.c
+    tinycthread_extra.c
+INCLUDE_DIRS 
+"."
+"include" 
+"include/include"
+)
+
