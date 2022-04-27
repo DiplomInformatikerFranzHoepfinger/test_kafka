@@ -55,6 +55,10 @@
 #include <windows.h>
 #endif
 
+#include "esp_log.h"
+static const char * const TAG = "kafka";
+
+
 struct rd_kafka_property {
 	rd_kafka_conf_scope_t scope;
 	const char *name;
@@ -2152,8 +2156,8 @@ rd_kafka_anyconf_set_prop (int scope, void *conf,
 static void rd_kafka_defaultconf_set (int scope, void *conf) {
 
 
-
-
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[0].name);
+    return;
 
 
 
