@@ -2150,6 +2150,13 @@ rd_kafka_anyconf_set_prop (int scope, void *conf,
 
 
 static void rd_kafka_defaultconf_set (int scope, void *conf) {
+
+
+
+
+
+
+
 	const struct rd_kafka_property *prop;
 
 	for (prop = rd_kafka_properties ; prop->name ; prop++) {
