@@ -2157,10 +2157,22 @@ static void rd_kafka_defaultconf_set (int scope, void *conf) {
 
 
 
-    for (int i = 0; i < 9; ++i) {
-        ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
-	}
-
+	int i = 1;
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
+    i++;
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
+    i++;
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
+    i++;
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
+    i++;
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
+    i++;
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
+    i++;
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
+    i++;
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[i].name);
 
 
     return;
