@@ -2157,6 +2157,15 @@ static void rd_kafka_defaultconf_set (int scope, void *conf) {
 
 
     ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[0].name);
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[1].name);
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[2].name);
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[3].name);
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[4].name);
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[5].name);
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[6].name);
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[7].name);
+    ESP_LOGI(TAG, "prop->name =  %s", rd_kafka_properties[8].name);
+
     return;
 
 
