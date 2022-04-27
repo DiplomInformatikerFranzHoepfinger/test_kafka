@@ -732,7 +732,7 @@ size_t rd_buf_get_write_iov (const rd_buf_t *rbuf,
              seg && iovcnt < iov_max && sum < size_max ;
              seg = TAILQ_NEXT(seg, seg_link)) {
                 size_t len;
-                void *p;
+                void *p = NULL;
 
                 len = rd_segment_write_remains(seg, &p);
                 if (unlikely(len == 0))

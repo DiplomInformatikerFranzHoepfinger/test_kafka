@@ -540,7 +540,7 @@ struct rd_kafka_buf_s { /* rd_kafka_buf_t */
  * @brief Read varint and store in int64_t \p dst
  */
 #define rd_kafka_buf_read_varint(rkbuf,dst) do {                        \
-                int64_t _v;                                             \
+                int64_t _v = 0;                                             \
                 size_t _r = rd_slice_read_varint(&(rkbuf)->rkbuf_reader, &_v);\
                 if (unlikely(RD_UVARINT_UNDERFLOW(_r)))                 \
                         rd_kafka_buf_underflow_fail(rkbuf, (size_t)0,   \
@@ -652,7 +652,7 @@ struct rd_kafka_buf_s { /* rd_kafka_buf_t */
  * @brief Read varint-lengted Kafka Bytes representation
  */
 #define rd_kafka_buf_read_bytes_varint(rkbuf,kbytes) do {               \
-                int64_t _len2;                                          \
+                int64_t _len2 = 0;                                      \
                 size_t _r = rd_slice_read_varint(&(rkbuf)->rkbuf_reader, \
                                                  &_len2);               \
                 if (unlikely(RD_UVARINT_UNDERFLOW(_r)))                 \

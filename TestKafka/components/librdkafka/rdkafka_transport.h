@@ -30,7 +30,7 @@
 #define _RDKAFKA_TRANSPORT_H_
 
 #ifndef _WIN32
-#include <poll.h>
+#include <sys/poll.h>
 #endif
 
 #include "rdbuf.h"

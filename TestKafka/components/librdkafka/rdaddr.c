@@ -35,6 +35,10 @@
 #ifdef _WIN32
 #include <ws2tcpip.h>
 #endif
+#ifdef ESP_PLATFORM
+#include <net/if.h>
+#define	NI_NUMERICHOST  0x00000004
+#endif
 
 const char *rd_sockaddr2str (const void *addr, int flags) {
 	const rd_sockaddr_inx_t *a = (const rd_sockaddr_inx_t *)addr;
@@ -62,6 +66,7 @@ const char *rd_sockaddr2str (const void *addr, int flags) {
 		if (!(flags & RD_SOCKADDR2STR_F_RESOLVE))
 			niflags |= NI_NUMERICHOST;
 
+#if(0)
         retry:
                 if ((r = getnameinfo(
                              (const struct sockaddr *)a,
@@ -85,7 +90,7 @@ const char *rd_sockaddr2str (const void *addr, int flags) {
                         }
                         break;
                 }
-
+#endif
 		
 		if (flags & RD_SOCKADDR2STR_F_PORT) {
 			size_t len = strlen(ret[reti]);
@@ -188,14 +193,14 @@ rd_sockaddr_list_t *rd_getaddrinfo (const char *nodesvc, const char *defsvc,
 #ifdef EAI_SYSTEM
 		if (r == EAI_SYSTEM)
 #else
-		if (0)
+		if (1)
 #endif
 			*errstr = rd_strerror(errno);
 		else {
 #ifdef _WIN32
 			*errstr = gai_strerrorA(r);
 #else
-			*errstr = gai_strerror(r);
+			//*errstr = gai_strerror(r);
 #endif
 			errno = EFAULT;
 		}

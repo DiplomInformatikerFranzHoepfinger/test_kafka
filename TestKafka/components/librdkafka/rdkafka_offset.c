@@ -977,7 +977,7 @@ static void rd_kafka_offset_broker_init (rd_kafka_toppar_t *rktp) {
  */
 void rd_kafka_offset_store_term (rd_kafka_toppar_t *rktp,
                                  rd_kafka_resp_err_t err) {
-        rd_kafka_resp_err_t err2;
+        rd_kafka_resp_err_t err2 = 0;
 
 	rd_kafka_dbg(rktp->rktp_rkt->rkt_rk, TOPIC, "STORETERM",
 		     "%s [%"PRId32"]: offset store terminating",
